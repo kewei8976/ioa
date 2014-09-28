@@ -1,0 +1,12 @@
+# Intellij project files
+/Debug
+/RELEASE
+*.iws
+/idea/
+/target/
+
+
+
+# Eclipse project files
+.classpath
+.project

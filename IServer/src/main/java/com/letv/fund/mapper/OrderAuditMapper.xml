@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.letv.fund.mapper.OrderAuditMapper" >
+
+  <resultMap id="BaseResultMap" type="OrderAudit" >
+    <id column="coa_id" property="coaId" jdbcType="INTEGER" />
+    <result column="fore_uid" property="foreUid" jdbcType="CHAR" />
+    <result column="fore_nickname" property="foreNickname" jdbcType="VARCHAR" />
+    <result column="back_uid" property="backUid" jdbcType="INTEGER" />
+    <result column="back_name" property="backName" jdbcType="VARCHAR" />
+    <result column="back_loginname" property="backLoginname" jdbcType="VARCHAR" />
+    <result column="audit_flag" property="auditFlag" jdbcType="TINYINT" />
+    <result column="audit_uid" property="auditUid" jdbcType="INTEGER" />
+    <result column="audit_name" property="auditName" jdbcType="VARCHAR" />
+    <result column="create_uid" property="createUid" jdbcType="INTEGER" />
+    <result column="create_at" property="createAt" jdbcType="TIMESTAMP" />
+    <result column="update_at" property="updateAt" jdbcType="TIMESTAMP" />
+  </resultMap>
+
+
+  <sql id="Base_Column_List" >
+    coa_id, fore_uid, fore_nickname, back_uid, back_name, back_loginname, audit_flag, 
+    audit_uid, audit_name, create_uid, create_at, update_at
+  </sql>
+
+  <select id="selectByLoginName" resultMap="BaseResultMap" parameterType="String" >
+    select 
+    <include refid="Base_Column_List" />
+    from customer_order_audit
+    where back_loginname = #{backLoginname,jdbcType=VARCHAR}
+  </select>
+
+</mapper>

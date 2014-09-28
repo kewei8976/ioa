@@ -1,0 +1,2 @@
+10:18:48.750 [main] INFO  com.letv.fund.service.impl.OrderAuditServiceImpl - 获取信息时报错 : Invalid bound statement (not found): com.letv.fund.mapper.OrderAuditMapper.selectByLoginName
+10:21:28.929 [main] INFO  com.letv.fund.service.impl.OrderAuditServiceImpl - 获取信息时报错 : Invalid bound statement (not found): com.letv.fund.mapper.OrderAuditMapper.selectByLoginName
